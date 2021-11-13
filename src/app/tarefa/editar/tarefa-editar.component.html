@@ -1,0 +1,36 @@
+<div class="container main-container">
+    <h1>{{titulo}}</h1>
+    <hr>
+    <form [formGroup]="cadastroForm" (ngSubmit)="editarTarefa()">
+        <label class="control-label" for="tituloTarefa">Titulo</label>
+        <div>
+            <input class="form-control" id="tituloTarefa" type="text" placeholder="Titulo" formControlName="tituloTarefa">
+        </div>
+        <label class="control-label" for="prioridade">Prioridade</label>
+        <div>
+            <select class="form-select" id="prioridade" formControlName="prioridade">
+                <option *ngFor="let prioridade of prioridades" value={{prioridade}}>
+                    {{tipos[prioridade]}}
+                </option>
+            </select>
+        </div>
+        <label class="control-label" for="dataCriacao">Data Criação</label>
+        <div>
+            <input class="form-control" id="dataCriacao" type="date" placeholder="Data Criação" formControlName="dataCriacao">
+        </div>
+        <label class="control-label" for="percentual">Percentual</label>
+        <div>
+            <input class="form-control" id="percentual" type="number" placeholder="Percentual" formControlName="percentual">
+        </div>
+        <label class="control-label" class="control-label" for="dataConclusao">Data Conclusão</label>
+        <div>
+            <input class="form-control" id="dataConclusao" type="date" placeholder="Data Conclusão" formControlName="dataConclusao">
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-success" id="registrar" type="submit">Registrar</button>
+            <button class="btn btn-danger" id="cancelar" type="button" (click)="cancelar()">Cancelar</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="container main-container">
+
+    <h1>{{titulo}}</h1>
+    <hr>
+    <br>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Percentual</th>
+                <th scope="col">Data Criação</th>
+                <th scope="col">Data Conclusão</th>
+                <th scope="col">Prioridade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tarefa of listaTarefas">
+                <td>{{tarefa.id}}</td>
+                <td>{{tarefa.tituloTarefa}}</td>
+                <td>{{tarefa.percentual}}</td>
+                <td>{{formatarData(tarefa.dataCriacao)}}</td>
+                <td>{{formatarData(tarefa.dataConclusao)}}</td>
+                <td>{{converterPrioridade(tarefa.prioridade)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
